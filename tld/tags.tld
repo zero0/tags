@@ -87,7 +87,7 @@
 			<required>true</required>
 			<rtexprvalue>true</rtexprvalue>
 			<type>java.lang.String</type>
-			<description>Sets the name of the placeholder.</description>
+			<description>Sets the name of the place holder.</description>
 		</attribute>
 	</tag>
 	
@@ -96,7 +96,7 @@
 		<tag-class>org.zero0.tags.masterpage.ContentTag</tag-class>
 		<body-content>JSP</body-content>
 		<description>
-			Creates a dynamic area that is inserted into the placeholder
+			Creates a dynamic area that is inserted into the place holder
 		</description>
 		<attribute>
 			<name>name</name>
