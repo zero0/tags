@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+
+<taglib>
+
+	<tlib-version>2.5</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>tags</short-name>
+	<uri></uri>
+	<description>Useful JSP Tag Library</description>
+	
+	<tag>
+		<name>map</name>
+		<tag-class>org.zero0.tags.map.MapTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>
+			Displays the contents of a map
+		</description>
+		<attribute>
+			<name>map</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.util.Map</type>
+			<description>The map to display the data</description>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>entry</name>
+		<tag-class>org.zero0.tags.map.EntryTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>
+			Displays for each of the selected entries in the current map
+		</description>
+		<attribute>
+			<name>select</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+			<description>The entries to select. The wildcard '*' can be used.</description>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>key</name>
+		<tag-class>org.zero0.tags.map.KeyTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			Displays key of the current map entry.
+		</description>
+	</tag>
+	
+	<tag>
+		<name>value</name>
+		<tag-class>org.zero0.tags.map.ValueTag</tag-class>
+		<body-content>empty</body-content>
+		<description>
+			Displays value of the current map entry.
+		</description>
+	</tag>
+	
+	<tag>
+		<name>masterPage</name>
+		<tag-class>org.zero0.tags.masterpage.MasterPageTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>
+			Sets the master page
+		</description>
+		<attribute>
+			<name>masterPage</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+			<description>Sets the master page.</description>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>placeholder</name>
+		<tag-class>org.zero0.tags.tags.masterpage.PlaceholderTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>
+			Creates a dynamic area that is replaced by content
+		</description>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+			<description>Sets the name of the placeholder.</description>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>content</name>
+		<tag-class>org.zero0.tags.masterpage.ContentTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>
+			Creates a dynamic area that is inserted into the placeholder
+		</description>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+			<description>Sets the name of the content.</description>
+		</attribute>
+	</tag>
+	
+</taglib>

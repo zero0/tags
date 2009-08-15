@@ -1,1 +1,95 @@
-read me
+= READ ME
+
+Useful JSP tags.
+
+== org.zero0.tags.masterpage
+
+
+==== Example:
+include.jsp
+<%@ taglib prefix="t" uri="/tags" %>
+
+template.jsp
+<%@ include file="include.jsp"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title><t:placeholder name="page-title"/></title>
+	</head>
+	<body>
+		<h1>Template</h1>
+		<div id="content">
+			<!-- default value is used when content is not defined for this place holder -->
+			<h2><t:placeholder name="title">No Title</t:placeholder></h2>
+			<t:placeholder name="content" />
+		</div>
+	</body>
+</html>
+
+main-page.jsp
+<%@ include file="include.jsp"%>
+<t:masterPage masterPage="template.jsp">
+	<t:content name="page-title">
+		Main Page
+	</t:content>
+	
+	<t:content name="title">
+		Main Content
+	</t:content>
+	
+	<t:content name="content">
+		<p>This is the main content</p>
+	</t:content>
+</t:masterPage>
+
+
+
+== org.zero0.tags.map
+
+Displays the contents of a map.
+
+==== Example:
+include.jsp
+<%@ taglib prefix="t" uri="/tags" %>
+
+map.jsp
+<%@ include file="include.jsp"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>Map</title>
+	</head>
+	<body>
+		<table>
+			<caption>Map</caption>
+			<thead>
+				<tr>
+					<th>Key</th>
+					<th>Value</th>
+				</tr>
+			</thead>
+			<tbody>
+				<t:map map="${map}">
+					<t:entry select="*"><!-- selects all entries -->
+						<tr>
+							<td><t:key/></td>
+							<td><t:value/></td>
+						</tr>
+					</t:entry>
+					<t:entry select="option-*"><!-- selects entries that start with 'option-' -->
+						<tr>
+							<td><t:key/></td>
+							<td><t:value/></td>
+						</tr>
+					</t:entry>
+					<t:entry select="*-api"><!-- selects entries that ends with '-api' -->
+						<tr>
+							<td><t:key/></td>
+							<td><t:value/></td>
+						</tr>
+					</t:entry>
+				</t:map>
+			</tbody>
+		</table>
+	</body>
+</html>
